@@ -1,18 +1,19 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
   {
     path: 'dashboard',
     loadComponent: () => import('./dashboard/dashboard.component'),
     children: [
       {
         path: 'change-detection',
-        title: 'Change detection',
+        title: 'Change Detection',
         loadComponent: () => import('./dashboard/pages/change-detection/change-detection.component'),
       },
       {
         path: 'control-flow',
-        title: 'Control flow',
+        title: 'Control Flow',
         loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component'),
       },
       {
@@ -21,18 +22,18 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/defer-options/defer-options.component'),
       },
       {
-        path: 'defer-viwes',
-        title: 'Defer Viwes',
+        path: 'defer-views',
+        title: 'Defer Views',
         loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),
       },
       {
         path: 'user/:id',
-        title: 'User',
+        title: 'User View',
         loadComponent: () => import('./dashboard/pages/user/user.component'),
       },
       {
-        path: 'users-list',
-        title: 'Users List',
+        path: 'user-list',
+        title: 'User List',
         loadComponent: () => import('./dashboard/pages/users/users.component'),
       },
       {
@@ -41,14 +42,16 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component'),
       },
       {
-        path: '',
-        redirectTo: 'control-flow', pathMatch: 'full',
+        path:'', redirectTo: 'control-flow', pathMatch: 'full',
       }
     ]
   },
   {
     path: '',
     redirectTo: '/dashboard',
-    pathMatch: 'full',
+    pathMatch: 'full'
   }
+
+
+
 ];
